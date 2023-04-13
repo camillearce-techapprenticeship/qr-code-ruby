@@ -4,7 +4,12 @@ require "rqrcode"
 qrcode = RQRCode::QRCode.new("https://camille-arce.github.io/")
 
 # Using the .as_png method to create a 500px by 500px image
-png = qrcode.as_png({ :size => 500})
+url_png = qrcode.as_png({ :size => 600, :color => "black", :fill => "tan" })
 
 #writing the imade data to a file
-IO.binwrite("theqrcode.png", png.to_s)
+IO.binwrite("url_qrcode.png", url_png.to_s)
+
+# ------------------------------------------------------------------------------------------ #
+# Wifi QR Code
+
+# wifiqrcode = RQRCode::QRCode.new "WIFI:T:WPA;S:IllinoisNet;P: 
